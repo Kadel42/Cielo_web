@@ -1,7 +1,7 @@
 
 
 :root {
-    --clr-primary-100: rgb(0, 167, 167);
+    --clr-primary-100: #28b6a7;
     --clr-accent-100: rgb(0, 83, 83);
 
     --clr-neutral-dark: rgb(90, 87, 87);
@@ -19,7 +19,7 @@
     --fs-100: 0.75rem;
     --fs-300: 1rem;
     --fs-400: 1.125rem;
-    --fs-500: 1.875rem;
+    --fs-500: 1.5rem;
     --fs-600: 2.5rem;
     --fs-700: 3.5rem;
 
@@ -195,6 +195,14 @@ img {
   object-fit: contain;
 }
 
+.welcome-message {
+  display: grid;
+  grid-auto-flow: row;
+  text-align: center;
+  justify-items: center;
+  gap: 15px;
+}
+
 @media (min-width: 50em) {
   .even-columns {
     grid-auto-flow: column;
@@ -203,8 +211,19 @@ img {
   .welcome-message {
     display: grid;
     grid-auto-flow: column;
-    
+    align-items: center;
+    min-height: 60vh;
+    gap: 50px;
   }
+
+  .welcome-picture {
+    justify-self: start;
+  }
+
+  .welcome-text {
+    justify-self: end;
+  }
+
 }
 
 /*General styling*/
@@ -224,6 +243,10 @@ footer {
   align-items: flex-end;
 }
 
+.bottom-text {
+  align-self: end;
+}
+
 .footer-columns {
   display: flex;
   justify-content: space-between;
@@ -231,15 +254,11 @@ footer {
 }
 
 .news {
-  background-color: var(--clr-primary-100);
+  background-image: linear-gradient(260.15deg,#28b6a7 0,#41dfa8 100%);
   color: var(--clr-neutral-light);
   padding: 0px;
   text-align: center;
-}
-
-.border-top {
-  height: 50px;
-  background-image: linear-gradient(var(--clr-neutral-light), var(--clr-primary-100));
+  min-height: 33vh;
 }
 
 /* Button */
@@ -267,7 +286,7 @@ footer {
 /* Navigation */
 
 .primary-header {
-  margin-top: var(--size-600);
+  margin: var(--size-600) var(--size-600) var(--size-400) var(--size-600);
 }
 
 .nav-wrapper {
@@ -280,17 +299,28 @@ footer {
 
 .nav-list {
   font-size: var(--fs-nav);
-  
+  display: flex;
+  gap: clamp(var(--size-500), 5vw, 10vw);
+  margin: var(--size-600) var(--size-600) var(--size-400) var(--size-600);
 }
 
 .nav-list a {
   text-decoration: none;
   color: black;
+
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
 }
 
 .social-links ul{
   display: flex;
   gap: 10px;
+}
+
+.mobile-nav-toggle {
+  display: none;
 }
 
 @media (max-width: 50em) {
